@@ -1,0 +1,15 @@
+{
+  "name": "i-wnt",
+  "version": "1.0.0",
+  "description": "Ben Otter's IWntIt, grabs nested values from an Object",
+  "main": "i-wnt.js",
+  "files": [
+    "i-wnt.js",
+    "tests/*.js"
+  ],
+  "scripts": {
+    "test": "node tests/main_test.js"
+  },
+  "author": "Ben Otter <benotter@me.com>",
+  "license": "MIT"
+}
