@@ -42,9 +42,6 @@ class IWntIt
                 let { names, values, path } = wnt[ p ];
                 let valO = this.getP( src, path );
 
-                if(values instanceof IWntIt)
-                    console.log(valO);
-
                 ret[ p ] = {};
 
                 if ( typeof values === 'string' )
