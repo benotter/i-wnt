@@ -1,9 +1,9 @@
 {
   "name": "@otter-co/i-wnt",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Ben Otter's IWntIt, grabs nested values from an Object",
   "author": "Ben Otter <benotter@me.com>",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
     "url": "https://github.com/benotter/i-wnt"
@@ -11,9 +11,6 @@
   "readme": "README.md",
   "main": "i-wnt.js",
   "files": [
-    "package.json",
-    "README.md",
-    "i-wnt.js",
     "tests/*.js"
   ],
   "scripts": {
