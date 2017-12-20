@@ -42,18 +42,24 @@ class IWntIt
                 let { names, values, path } = wnt[ p ];
                 let valO = this.getP( src, path );
 
+                if(values instanceof IWntIt)
+                    console.log(valO);
+
                 ret[ p ] = {};
 
                 if ( typeof values === 'string' )
                     for ( let valP in valO )
-                        ret[ p ][ !!names ? valO[ valP ][ names ] : valP ] = this.getP( valO[ valP ], values );
-                else
+                        ret[ p ][ !!names ? this.getP( valO[ valP ], names ) : valP ] = this.getP( valO[ valP ], values );
+                else if ( values instanceof IWntIt )
+                    for ( let valP in valO )
+                        ret[ p ][ !!names ? this.getP( valO[ valP ], names ) : valP ] = values.from( valO[ valP ] );
+                else if ( typeof values === 'object' )
                     for ( let valP in valO )
                     {
-                        ret[ p ][ !!names ? valO[ valP ][ names ] : valP ] = {};
-
+                        let n = !!names ? this.getP( valO[ valP ], names ) : valP;
+                        ret[ p ][ n ] = {};
                         for ( let valProp in values )
-                            ret[ p ][ !!names ? valO[ valP ][ names ] : valP ][ valProp ] = this.getP( valO[ valP ], values[ valProp ] );
+                            ret[ p ][ n ][ valProp ] = this.getP( valO[ valP ], values[ valProp ] );
                     }
             }
         }

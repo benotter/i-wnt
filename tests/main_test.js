@@ -107,5 +107,13 @@ let res1 = iWant( {
 
 let res2 = iWant( 'colors.red.val' ).from( testObj );
 
+let res3 = iWant( {
+    Colors: {
+        path: 'colors',
+        values: iWant( 'val' )
+    }
+} ).from( testObj );
+
 console.log( res1 );
 console.log( res2 );
+console.log( res3 );
